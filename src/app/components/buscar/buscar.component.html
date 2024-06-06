@@ -1,0 +1,31 @@
+<p>buscar works!</p>
+<form class="d-flex" role="search">
+    <input class="form-control me-2" type="search" placeholder="Search" (keyup.enter)="buscarRuta(buscarTexto.value)" #buscarTexto aria-label="Search">
+    <button (click)="buscarRuta(buscarTexto.value)" class="btn btn-outline-success" type="submit">Buscar</button>
+  </form>
+
+
+
+
+  <h1>Buscar: <small>{{termino}} </small></h1>
+<hr>
+<div class = "row">
+<div class="col" *ngFor=" let rutas of rutas; let i=index">
+<div class="card" style="width: 18rem;">
+
+    <div class="card-body">
+      <h5 class="card-title">{{rutas.ciuorigen}}</h5>
+      <p class="card-text" style="text-align: justify;">{{rutas.ciudestino}}</p>
+      <p class="card-text"><small class="text-body-secondary">{{rutas.preruta}} </small></p>
+      <p class="card-text"><small class="text-body-secondary">{{rutas.descripcion}} </small></p>
+      <p class="card-text"><small class="text-body-secondary">{{rutas.tipo}} </small></p>
+
+    </div>
+  </div>
+  <br>
+</div>
+
+
+
+
+</div>

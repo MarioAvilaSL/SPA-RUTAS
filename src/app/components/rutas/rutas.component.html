@@ -1,0 +1,57 @@
+<section class="info">
+    <h1 style="padding-bottom: 20px;">Rutas <small>Orenses </small></h1>
+    
+
+<!-- Botones de filtro -->
+<div class="button-group" style="padding-bottom: 20px;">
+    <button (click)="FiltroT()" type="button" class="btn btn-primary" style="margin-right: 10px;">TODOS</button>
+    <button (click)="FiltroI()" type="button" class="btn btn-primary" style="margin-right: 10px;">Interno</button>
+    <button (click)="FiltroE()" type="button" class="btn btn-primary" style="margin-right: 10px;">Externo</button>
+</div>
+
+
+
+<!-- Mostrar filtro -->
+<div *ngIf="rutas.length > 0">
+    <h2>Rutas Filtradas</h2>
+    <ul>
+      <li *ngFor="let ruta of rutas">
+        {{ ruta.descripcion }} - {{ ruta.tipo }}
+      </li>
+    </ul>
+  </div>
+  <div *ngIf="rutas.length === 0">
+    <p>No hay rutas disponibles para mostrar.</p>
+  </div>
+
+
+
+
+<!-- Todas las rutas-->
+
+    <div class="col animated fadeIn fast" *ngFor="let Rutas of rutas; let i=index">
+
+        
+        
+        <div class="card mb-3" style="max-width: 540px;">
+            
+            <div class="row g-0">
+                
+                <div class="col-md-8">
+                    
+                    <div class="card-body">
+                        <h5 class="card-title">{{Rutas.ciuorigen}}</h5>
+                        <p class="card-text" style="text-align: justify;">{{Rutas.ciudestino}}</p>
+                        <p class="card-text"><small class="text-body-secondary">{{Rutas.preruta}} </small></p>
+                        <p class="card-text"><small class="text-body-secondary">{{Rutas.descripcion}} </small></p>
+                        <p class="card-text"><small class="text-body-secondary">{{Rutas.tipo}} </small></p>
+                        <button (click)="VerRuta(i)" type="button" class="btn btn-primary" style="padding-left: 15px; padding-right: 15px;"> Ver más... </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<div>
+
+</div>
